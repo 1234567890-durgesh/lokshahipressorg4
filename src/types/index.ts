@@ -59,3 +59,22 @@ export type DictKey =
   | 'image_ph'
   | 'logo'
   | 'wireframe';
+
+export interface LeadershipMember {
+  id: string;
+  roleMr: string;
+  roleEn: string;
+  nameMr: string;
+  nameEn: string;
+  stateMr: string;
+  stateEn: string;
+  subtitleMr?: string;
+  subtitleEn?: string;
+  profileMr: string;
+  profileEn: string;
+  fullBioMr?: string[];
+  fullBioEn?: string[];
+  highlightsMr?: string[];
+  highlightsEn?: string[];
+  image?: string;
+}

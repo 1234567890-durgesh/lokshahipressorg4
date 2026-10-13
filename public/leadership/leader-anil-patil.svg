@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-leader-anil-patil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#141E30"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="gold-leader-anil-patil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="accent-leader-anil-patil" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#E30620"/>
+    </linearGradient>
+    <filter id="shadow-leader-anil-patil" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.35"/>
+    </filter>
+    <radialGradient id="halo-leader-anil-patil" cx="50%" cy="38%" r="45%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="400" height="440" rx="16" fill="url(#bg-leader-anil-patil)"/>
+  <rect width="400" height="440" rx="16" fill="url(#halo-leader-anil-patil)"/>
+  
+  <!-- Subtle Architectural/Press Pattern -->
+  <circle cx="200" cy="165" r="130" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+  <circle cx="200" cy="165" r="145" stroke="#3B82F6" stroke-opacity="0.15" stroke-width="1" fill="none"/>
+
+  <!-- Top Institutional Bar -->
+  <rect x="0" y="0" width="400" height="6" fill="url(#accent-leader-anil-patil)"/>
+
+  <!-- Leader Visual Portrait Container -->
+  <g id="portrait-figure" filter="url(#shadow-leader-anil-patil)">
+    <!-- Suit / Coat Shoulders -->
+    <path d="M 90 350 C 90 270, 130 245, 170 240 L 230 240 C 270 245, 310 270, 310 350 Z" fill="#334155"/>
+    
+    <!-- Shirt / Collar -->
+    <path d="M 165 240 L 200 295 L 235 240 Z" fill="#F1F5F9"/>
+    <path d="M 165 240 L 185 270 L 200 245 Z" fill="#E2E8F0"/>
+    <path d="M 235 240 L 215 270 L 200 245 Z" fill="#CBD5E1"/>
+
+    
+
+    
+      <!-- Executive Necktie -->
+      <polygon points="194,250 206,250 210,290 200,310 190,290" fill="#3B82F6"/>
+    
+
+    
+
+    <!-- Neck -->
+    <path d="M 178 215 L 178 245 C 178 255, 222 255, 222 245 L 222 215 Z" fill="#E8B896"/>
+
+    <!-- Head / Face Silhouette -->
+    <ellipse cx="200" cy="160" rx="46" ry="56" fill="#F0C3A2"/>
+
+    <!-- Hair (Sides and Top) -->
+    <path d="M 152 165 C 150 120, 170 105, 200 105 C 230 105, 250 120, 248 165 C 242 135, 235 120, 200 120 C 165 120, 158 135, 152 165 Z" fill="#1C1917"/>
+
+    
+
+    <!-- Ears -->
+    <ellipse cx="152" cy="165" rx="6" ry="12" fill="#E8B896"/>
+    <ellipse cx="248" cy="165" rx="6" ry="12" fill="#E8B896"/>
+
+    <!-- Eyebrows -->
+    <path d="M 172 145 Q 183 141 192 144" stroke="#292524" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 208 144 Q 217 141 228 145" stroke="#292524" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes -->
+    <ellipse cx="182" cy="153" rx="3.5" ry="2.5" fill="#1C1917"/>
+    <ellipse cx="218" cy="153" rx="3.5" ry="2.5" fill="#1C1917"/>
+
+    <!-- Nose -->
+    <path d="M 200 148 L 197 170 Q 200 173 203 170 Z" fill="#DF9F7E"/>
+
+    
+
+    
+      <!-- Spectacles Frame -->
+      <rect x="170" y="146" width="22" height="15" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+      <rect x="208" y="146" width="22" height="15" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+      <path d="M 192 153 L 208 153" stroke="#475569" stroke-width="1.8" fill="none"/>
+      <path d="M 170 151 L 154 149" stroke="#475569" stroke-width="1.2" fill="none"/>
+      <path d="M 230 151 L 246 149" stroke="#475569" stroke-width="1.2" fill="none"/>
+    
+
+    
+      <!-- Dignified Mustache -->
+      <path d="M 183 181 Q 200 178 217 181 Q 200 188 183 181 Z" fill="#1C1917"/>
+    
+
+    
+
+    <!-- Confident Smile -->
+    <path d="M 191 192 Q 200 197 209 192" stroke="#B45309" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Bottom Details Overlay Card -->
+  <rect x="16" y="324" width="368" height="100" rx="12" fill="#0B1323" fill-opacity="0.92" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <rect x="24" y="336" width="7" height="76" rx="3.5" fill="#3B82F6"/>
+
+  <!-- Badge for Position -->
+  <g transform="translate(42, 338)">
+    <rect x="0" y="0" width="160" height="20" rx="4" fill="#3B82F6" fill-opacity="0.2"/>
+    <text x="8" y="14" fill="#FFFFFF" font-family="'Mukta', 'Noto Sans Devanagari', sans-serif" font-weight="800" font-size="11.5" letter-spacing="0.5">
+      राष्ट्रीय समन्वयक व सल्लागार
+    </text>
+  </g>
+
+  <!-- Leader Name -->
+  <text x="42" y="380" fill="#FFFFFF" font-family="'Mukta', 'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="16.5">
+    डॉ. अनिल दिलीप पाटील
+  </text>
+
+  <!-- Tagline / Domain -->
+  <text x="42" y="401" fill="#94A3B8" font-family="'Mukta', 'Noto Sans Devanagari', sans-serif" font-weight="600" font-size="11">
+    Saitech Group • उद्योजक व पत्रकार
+  </text>
+</svg>

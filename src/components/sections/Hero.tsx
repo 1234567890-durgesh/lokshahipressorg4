@@ -83,7 +83,10 @@ export function Hero({
   }, [currentSlide, backgroundSlides.length]);
 
   return (
-    <section className="relative w-full aspect-[16/9] min-h-[210px] max-h-[240px] sm:aspect-auto sm:min-h-[460px] sm:max-h-none md:min-h-[500px] lg:min-h-[540px] flex items-center justify-start overflow-hidden border-b-4 border-[#E30620] bg-[#0B1E36]">
+    <section
+      style={{ height: '840px', minHeight: '840px' }}
+      className="relative w-full h-[840px] min-h-[840px] flex items-center justify-start overflow-hidden border-b-4 border-[#E30620] bg-[#0B1E36]"
+    >
       {/* Background Image Slides with Smooth Crossfade */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         {backgroundSlides.map((slide, idx) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { INDIA_MAP_VIEWBOX, INDIA_STATES, ACTIVE_STATES_LIST } from '../../data/indiaMapData';
-import { MapPin, CheckCircle2, ChevronRight, X } from 'lucide-react';
+import { CheckCircle2, X } from 'lucide-react';
 
 interface IndiaNetworkMapProps {
   className?: string;
@@ -19,10 +19,10 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
 
   return (
     <div
-      className={`relative flex flex-col overflow-hidden rounded-xl border-2 border-[#172A4A]/25 bg-gradient-to-b from-white via-neutral-50/50 to-neutral-100 shadow-md ${className}`}
+      className={`relative flex flex-col overflow-hidden rounded-xl border-[3px] border-[#172A4A]/35 bg-gradient-to-b from-white via-neutral-50/50 to-neutral-100 shadow-md ${className}`}
     >
       {/* Frame Top Header */}
-      <div className="flex items-center justify-between border-b border-[#172A4A]/15 bg-white px-3.5 py-2.5 sm:px-4">
+      <div className="flex items-center justify-between border-b-2 border-[#172A4A]/20 bg-white px-3.5 py-2.5 sm:px-4">
         <div className="flex items-center gap-2">
           <span className="flex h-2.5 w-2.5 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E30620] opacity-75"></span>
@@ -95,7 +95,6 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
           </div>
         )}
 
-
         {/* Interactive SVG Map */}
         <div className={`w-full h-full flex items-center justify-center ${showPillList ? 'hidden' : 'block'}`}>
           <svg
@@ -121,15 +120,15 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
                 const isHovered = hoveredStateId === state.id;
                 const isActive = state.isActive;
 
-                // Color styling
+                // Color styling with moderately increased borders
                 let fill = '#F1F5F9';
-                let stroke = '#CBD5E1';
-                let strokeWidth = '0.75';
+                let stroke = '#94A3B8';
+                let strokeWidth = '1.2';
 
                 if (isActive) {
-                  fill = isSelected || isHovered ? '#FECACA' : '#FEE2E2';
-                  stroke = isSelected || isHovered ? '#DC2626' : '#F87171';
-                  strokeWidth = isSelected || isHovered ? '1.5' : '1';
+                  fill = isSelected || isHovered ? 'rgba(227, 6, 32, 0.5)' : '#FEE2E2';
+                  stroke = isSelected || isHovered ? '#DC2626' : '#EF4444';
+                  strokeWidth = isSelected || isHovered ? '1.8' : '1.35';
                 }
 
                 return (
@@ -140,7 +139,7 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
                     stroke={stroke}
                     strokeWidth={strokeWidth}
                     className={`transition-colors duration-200 ${
-                      isActive ? 'cursor-pointer hover:opacity-90' : 'cursor-default'
+                      isActive ? 'cursor-pointer' : 'cursor-default'
                     }`}
                     onMouseEnter={() => {
                       if (isActive) setHoveredStateId(state.id);
@@ -182,7 +181,7 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
                     <circle
                       r={isHighlighted ? 14 : 7}
                       fill="#EF4444"
-                      opacity={isHighlighted ? 0.35 : 0.2}
+                      opacity={isHighlighted ? 0.5 : 0.2}
                       className={isHighlighted ? 'animate-pulse' : ''}
                     />
 
@@ -272,7 +271,6 @@ export function IndiaNetworkMap({ className = '' }: IndiaNetworkMapProps) {
           </div>
         )}
       </div>
-
     </div>
   );
 }

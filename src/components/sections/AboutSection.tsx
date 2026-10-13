@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { SectionShell, WFCard } from '../ui/WireframePrimitives';
 import { Logo } from '../Logo';
+import aboutBannerImage from '../../assets/images/regenerated_image_1791925926114.jpg';
 
 export function AboutSection({ isHome = false }: { isHome?: boolean }) {
   const { t, lang } = useLanguage();
@@ -11,9 +12,16 @@ export function AboutSection({ isHome = false }: { isHome?: boolean }) {
       {/* Featured Community & Leadership Banner Image */}
       <div className="mb-8 sm:mb-10 overflow-hidden rounded-2xl border-2 border-[#172A4A]/20 bg-white shadow-sm">
         <img
-          src="/about-us.jpg?v=2"
-          alt={lang === 'mr' ? 'लोकशाही पत्रकार महासंघ भारत - राष्ट्रीय अधिवेशन व पदाधिकारी' : 'Lokshahi Patrakar Mahasangh Bharat - Members & Leadership'}
-          className="w-full h-auto block"
+          src={aboutBannerImage}
+          alt={lang === 'mr' ? 'आमच्याविषयी - लोकशाही पत्रकार महासंघ भारत' : 'About Us - Lokshahi Patrakar Mahasangh Bharat'}
+          className="w-full h-auto block object-cover"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.src.includes('about-banner.jpg')) {
+              target.src = '/about-banner.jpg';
+            }
+          }}
         />
       </div>
 

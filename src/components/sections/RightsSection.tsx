@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { SectionShell, WFButton, WFCard } from '../ui/WireframePrimitives';
+import rightsBannerImage from '../../assets/images/rights-banner.jpg';
 
 const rightsPoints = [
   {
@@ -37,7 +38,31 @@ export function RightsSection({ onHelpdeskClick }: { onHelpdeskClick?: () => voi
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="rights" title={t('sec_rights')}>
+    <SectionShell
+      id="rights"
+      title={t('sec_rights')}
+      topBanner={
+        <div className="overflow-hidden rounded-2xl border-2 border-[#172A4A]/20 bg-neutral-100 shadow-sm transition-all hover:shadow-md">
+          <img
+            src={rightsBannerImage}
+            alt={
+              lang === 'mr'
+                ? "पत्रकारांचे न्याय, हक्क आणि अधिकार — लोकशाही पत्रकार महासंघ भारत"
+                : "Journalists' Rights & Legal Protections — Lokshahi Patrakar Mahasangh Bharat"
+            }
+            className="h-auto w-full max-h-[480px] sm:max-h-[540px] object-cover"
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              const img = e.currentTarget;
+              if (!img.dataset.fallback) {
+                img.dataset.fallback = 'true';
+                img.src = '/rights-banner.jpg';
+              }
+            }}
+          />
+        </div>
+      }
+    >
       <div className="grid gap-8 lg:grid-cols-12 lg:items-start text-left">
         {/* Left Column: Context & Bullet Points from PDF Page 9 */}
         <div className="space-y-4 lg:col-span-7">

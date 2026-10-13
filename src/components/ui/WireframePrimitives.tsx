@@ -179,6 +179,7 @@ export function SectionShell({
   icon,
   children,
   className,
+  topBanner,
 }: {
   id?: string;
   index?: string;
@@ -186,10 +187,16 @@ export function SectionShell({
   icon?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  topBanner?: React.ReactNode;
 }) {
   return (
     <section id={id} className={cn('border-b border-dashed border-[#172A4A]/20 py-10 sm:py-12', className)}>
       <div className="mx-auto w-full max-w-6xl px-4">
+        {topBanner && (
+          <div className="mb-6 sm:mb-8">
+            {topBanner}
+          </div>
+        )}
         {title && (
           <div className="mb-6 sm:mb-8 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
             <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
@@ -210,14 +217,19 @@ export function PageHero({
   titleKey,
   onNavigate,
   showSubtitle = true,
+  heroImage,
+  imageAlt,
 }: {
   titleKey: DictKey;
   onNavigate?: (path: string) => void;
   showSubtitle?: boolean;
+  heroImage?: string;
+  imageAlt?: string;
+  imageBadge?: string;
 }) {
   const { t } = useLanguage();
   return (
-    <section className="border-b border-[#172A4A]/20 bg-[#F7F3EC] py-9">
+    <section className="border-b border-[#172A4A]/20 bg-[#F7F3EC] py-8 sm:py-10">
       <div className="mx-auto w-full max-w-6xl px-4 text-left">
         <nav className="mb-3 flex items-center gap-1.5 text-xs font-semibold text-[#172A4A]/60">
           <button
@@ -240,6 +252,25 @@ export function PageHero({
           <p className="mt-2 text-xs font-medium text-[#172A4A]/70 max-w-2xl">
             {t('page_subtitle')}
           </p>
+        )}
+
+        {heroImage && (
+          <div className="mt-6 sm:mt-8 overflow-hidden rounded-2xl border-2 border-[#172A4A]/20 bg-white shadow-md">
+            <div className="relative bg-neutral-50">
+              <img
+                src={heroImage}
+                alt={imageAlt || t(titleKey)}
+                className="w-full h-auto block object-cover max-h-[560px]"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes('about-banner.jpg')) {
+                    target.src = '/about-banner.jpg';
+                  }
+                }}
+              />
+            </div>
+          </div>
         )}
       </div>
     </section>
